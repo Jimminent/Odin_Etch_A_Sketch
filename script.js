@@ -11,7 +11,7 @@ function removeAllChildNodes(parent) {
 function setup(input) {
     container.style.gridTemplateColumns = `repeat(${side}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${side}, 1fr)`;
-    
+
     for (i = 0; i < input; i++) {
         let item = document.createElement("div");
         container.appendChild(item);
@@ -26,10 +26,14 @@ setup(grid);
 
 let button = document.getElementById("reset");
 button.addEventListener("click", (event) => {
-    side = prompt("how many squares to a side?");
-    removeAllChildNodes(container);
-    grid = side * side;
-    setup(grid);
+    side = parseInt(prompt("how many squares to a side? (choose between 1 and 100)"));
+    if (typeof side === "number") {
+        if (side > 0 && side <= 100) {
+            removeAllChildNodes(container);
+            grid = side * side;
+            setup(grid);
+        }
+    }
 
 });
 
