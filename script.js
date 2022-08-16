@@ -1,4 +1,5 @@
-let grid = 16 * 16;
+let side = 16
+let grid = side * side;
 
 for (i = 0; i < grid; i++) {
     let item = document.createElement("div");
