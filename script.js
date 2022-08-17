@@ -19,7 +19,7 @@ function setup(input) {
         container.appendChild(item);
 
         item.addEventListener("mouseover", (event) => {
-            item.style.backgroundColor = "black";
+            item.style.backgroundColor = "rgb(65, 84, 158)";
         });
     }
 }
@@ -34,7 +34,7 @@ button.addEventListener("click", (event) => {
         removeAllChildNodes(container);
         grid = side * side;
         setup(grid);
-        
+
     } else {
         alert("Please choose a number between 1 and 100.")
     }
