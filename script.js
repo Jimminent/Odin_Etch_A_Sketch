@@ -1,6 +1,8 @@
 let side = 16;
 let grid = side * side;
 let container = document.getElementById("gridContainer");
+let button = document.getElementById("reset");
+
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -24,15 +26,17 @@ function setup(input) {
 
 setup(grid);
 
-let button = document.getElementById("reset");
+
 button.addEventListener("click", (event) => {
-    side = parseInt(prompt("how many squares to a side? (choose between 1 and 100)"));
-    if (typeof side === "number") {
-        if (side > 0 && side <= 100) {
-            removeAllChildNodes(container);
-            grid = side * side;
-            setup(grid);
-        }
+    side = parseInt(prompt("how many squares to a side?"));
+
+    if (side > 0 && side <= 100) {
+        removeAllChildNodes(container);
+        grid = side * side;
+        setup(grid);
+        
+    } else {
+        alert("Please choose a number between 1 and 100.")
     }
 
 });
