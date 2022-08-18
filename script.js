@@ -34,7 +34,7 @@ setup(grid);
 
 // create logic for the reset button, and include an option to change the amount of squares on a side.
 button.addEventListener("click", (event) => {
-    side = parseInt(prompt("how many squares to a side?"));
+    side = parseInt(prompt("how many squares to a side?", "16"));
 
     if (side > 0 && side <= 100) {
         removeAllChildNodes(container);
